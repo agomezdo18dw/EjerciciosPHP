@@ -4,6 +4,8 @@
 	<title>Ejercicio PHP/1.Comunidad</title>
 </head>
 <body>
+    <p>Dados el número de pisos y de puertas, realiza un listado de
+    las viviendas de la comunidad.</p>
 	<?php
     //Calculamos aleatoriamente pisos y puertas de un edificio
 	$pisos = rand(1,10);

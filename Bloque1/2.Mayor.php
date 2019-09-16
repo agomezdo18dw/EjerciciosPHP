@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/1.Comunidad</title>
+	<title>Ejercicio PHP/2.Mayor</title>
 </head>
 <body>
+    <p>A partir de tres números, mostrar el mayor.</p>
 	<?php
     //Calculamos aleatoriamente tres numeros
 	$num1 = rand(0, 100);
