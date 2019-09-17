@@ -9,13 +9,14 @@
     //Calculamos aleatoriamente un numero
 	$num1 = rand(0, 100);
     //Mostramos el numero calculado
-    echo "El numero es: $num1 <br>
-          <br>";
+    echo "<p><b>El numero es:</b> $num1</p>";
     //Calculamos si el numero es multiplo de 3
-    for ($i = 0; $i < $num1; $i++){
-        for ($i % 3 == 0)
-        echo "El numero $num1 es multiplo de 3"
-    }
+    if ($num1 % 3 == 0)
+        echo "<p>El numero $num1 es multiplo de 3</p>";
+    elseif ($num1 == 0)
+        echo "<p>El numero $num1 no es multiplo de 3</p>";
+    else
+        echo "<p>El numero $num1 no es multiplo de 3</p>";
 	?>
 </body>
 </html>

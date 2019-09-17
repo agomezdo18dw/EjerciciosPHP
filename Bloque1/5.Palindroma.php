@@ -9,19 +9,31 @@
     derecha a izquierda.</p>
 	<?php
     $cadena = "alli ves sevilla";
-    echo "La frase: $cadena";
+    $cadena2 = "Hola me llamo federico";
+    echo "<p><b>Primera frase:</b> $cadena</p>
+          <p><b>Segunda frase:</b> $cadena2</p>";
     $separar = explode(" ", strtolower($cadena));
+    $separar2 = explode(" ", strtolower($cadena2));
 
     foreach($separar as $palabra) {
         trim($palabra);
         $nuevo .= $palabra; 
     }
-
     if($nuevo == strrev($nuevo)) {
-        echo "Si es palindroma";
+        echo "<p>La primera frase si es palindroma</p>";
     }
     else {
-        echo "No es palindroma";
+        echo "<p>La primera frase no es palindroma</p>";
+    }
+    foreach($separar2 as $palabra2) {
+        trim($palabra2);
+        $nuevo .= $palabra2; 
+    }
+    if($nuevo == strrev($nuevo)) {
+        echo "<p>La segunda frase si es palindroma</p>";
+    }
+    else {
+        echo "<p>La segunda frase no es palindroma</p>";
     }
 	?>
 </body>
