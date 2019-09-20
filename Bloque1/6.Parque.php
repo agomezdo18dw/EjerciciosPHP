@@ -21,11 +21,11 @@
     <b>La persona esta acompañada:</b> $acompañado</p>";
 
     if ($edad >= 10 or $altura >= 120)
-        echo "Puede subir";
+        echo "Puede entrar";
     elseif ($edad >= 6 and $acompañado == "Acompañado")
-        echo "Puede subir";
+        echo "Puede entrar ya que va acompañado";
     else
-        echo "No puede subir";
+        echo "No puede entrar";
 	?>
 </body>
 </html>
