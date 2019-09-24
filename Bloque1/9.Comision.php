@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/6.Parque</title>
+	<title>Ejercicio PHP/9.Comision</title>
 </head>
 <body>
     <p>Queremos calcular la comisión de un vendedor. La comisión es
@@ -13,7 +13,7 @@
     $ventas = rand(1, 50000);
     $total;
     echo "<b>El importe total de ventas es: </b>".$ventas;
-    
+
     if ($ventas <= 10000) {
         echo "<p>El porcentaje en este caso es 5%</p>";
         $total = $ventas + ($ventas * 5 / 100);

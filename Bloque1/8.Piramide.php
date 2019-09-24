@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/5.Palindromas</title>
+	<title>Ejercicio PHP/8.Piramide</title>
 </head>
 <body>
     <p>Implementa el código que dada una variable ‘base’ que tiene

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/1.Comunidad</title>
+	<title>Ejercicio PHP/3.RangoDeEdad</title>
 </head>
 <body>
 	<?php

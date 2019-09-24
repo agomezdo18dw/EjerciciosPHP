@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/6.Parque</title>
+	<title>Ejercicio PHP/7.EnteroPositivo</title>
 </head>
 <body>
     <p>Implementar la siguiente operación, aplicable a cualquier
