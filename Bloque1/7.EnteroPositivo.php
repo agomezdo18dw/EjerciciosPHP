@@ -5,9 +5,9 @@
 </head>
 <body>
     <p>Implementar la siguiente operación, aplicable a cualquier
-    número entero positivo:
-    - Si el número es par, se divide entre 2.
-    - Si el número es impar, se multiplica por 3 y se suma 1.
+    número entero positivo:<br>
+    - Si el número es par, se divide entre 2.<br>
+    - Si el número es impar, se multiplica por 3 y se suma 1.<br>
 Al final siempre obtenemos uno.</p>
     <?php
     $primerN = rand(10, 20);
