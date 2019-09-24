@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/5.Palindromas</title>
+	<title>Ejercicio PHP/4.Palindromas</title>
 </head>
 <body>
     <p>Dado una palabra indica si es palindromo. Un palíndromo es una 

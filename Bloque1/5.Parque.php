@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/6.Parque</title>
+	<title>Ejercicio PHP/5.Parque</title>
 </head>
 <body>
     <p>Queremos controlar la entrada a una atracción del parque. Se

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/4.MultiploDe3</title>
+	<title>Ejercicio PHP/Plus-MultiploDe3</title>
 </head>
 <body>
     <p>Dado un número indica si es múltiplo de 3.</p>
