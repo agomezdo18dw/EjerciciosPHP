@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/6.Parque</title>
+	<title>Ejercicio PHP/Plus-Cuadrados</title>
 </head>
 <body>
     <p>Hacer un programa que nos muestre los números y sus cuadrados
