@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/9.Comision</title>
+	<title>Ejercicio PHP/10.TiendaOnLine</title>
 </head>
 <body>
     <p>Disponemos de los siguientes datos:<br>
