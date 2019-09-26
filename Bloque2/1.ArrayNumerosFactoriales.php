@@ -10,13 +10,29 @@
     factorial del número incluido en la misma posición del primer
     array.</p>
 	<?php
+    //Inicializamos los dos array
     $naturales = [];
     $factoriales = [];
-    $numero = 0;
+    //Creamos variable en la que meter el valor del numero del array naturales
+    $numero;
+    //Creamos variable en el que meter el valor del factorial
     $factorial;
+    //Creamos un bucle que complete el array de los numeros naturales
     for ($i = 0; $i < 10; $i++){
         $naturales[$i] = $i;
     }
+    //Escribimos el array de numeros naturales
+    echo "Array de numeros naturales: <br>";
+    foreach ($naturales as $valor1){
+        echo "$valor1";
+        if ($valor1 < 9)
+            echo ", ";
+        else
+            echo ".";
+    }
+    echo "<br><br>";
+
+    //Bucle que completa array de factoriales teniendo en cuenta los valores del array de los naturales
     for ($i = 0; $i < count($naturales); $i++){
         $numero = $naturales[$i];
         if($numero == 0)
@@ -27,8 +43,17 @@
             }
         $factoriales[$i] = $factorial;
     }
-    foreach ($factoriales as $valor){
-        echo "$valor, ";
+    //Escribimos array de los factoriales
+    echo "Array factoriales: <br>";
+    $cont = 0;
+    foreach ($factoriales as $valor2){
+        echo "$valor2";
+        if ($cont < 9)
+            echo ", ";
+        else
+            echo ".";
+        $cont++;
+        echo "<script>console.log($cont)</script>";
     }
 	?>
 </body>
