@@ -39,7 +39,8 @@
             $factorial = 1;
         else
             for ($j = 1; $j <= $numero; $j++){
-                $factorial = $factorial * $j;
+                $factorial *= $j;
+                echo "<script>console.log($factorial)</script>";
             }
         $factoriales[$i] = $factorial;
     }
@@ -53,7 +54,6 @@
         else
             echo ".";
         $cont++;
-        echo "<script>console.log($cont)</script>";
     }
 	?>
 </body>
