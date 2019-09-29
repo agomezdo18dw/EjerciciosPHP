@@ -11,13 +11,14 @@
     - el mayor de los números en color verde<br>
     - la suma y la media (número con dos decimales) de todos los números.</p>
 	<?php
+    //Inicializamos el array
     $numeros = [];
-
+    //Completamos el array con numeros aleatorios del 1 al 100
     for ($i = 0; $i < 20; $i++) {
         $num = rand(1, 100);
         $numeros[$i] = $num;
     }
-
+    //Escribimos el array
     echo "<b>Array desordenado: </b><br>";
     $cont = 1;
     foreach ($numeros as $valor) {
@@ -28,9 +29,9 @@
             echo ".<br><br>";
         $cont++;
     }
-
+    //Ordenamos el array
     sort($numeros);
-
+    //Escribimos el array ordenado
     echo "<b>Array ordenado: </b><br>";
     $cont = 1;
     foreach ($numeros as $valor) {
@@ -41,7 +42,7 @@
             echo ".<br>";
         $cont++;
     }
-
+    //Escribimos lo que no pide
     echo "<p><b>El numero mas pequeño es:</b> <font color='blue'>".$numeros[0]."</font></p>";
     echo "<p><b>El numero mas grande es:</b> <font color='green'>".$numeros[count($numeros)-1]."</font></p>";
     echo "<p><b>La suma de todos los numeros:</b> ".array_sum($numeros)."</p>";
