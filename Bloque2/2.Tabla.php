@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/Bloque2/1.ArrayNumerosFactorial</title>
+	<title>Ejercicio PHP/Bloque2/2.Tabla</title>
     <style>
         table {border: 1px solid black}
         td {border: 1px solid black;}
