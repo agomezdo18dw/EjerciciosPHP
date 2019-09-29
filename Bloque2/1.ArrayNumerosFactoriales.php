@@ -16,11 +16,13 @@
     //Creamos variable en la que meter el valor del numero del array naturales
     $numero;
     //Creamos variable en el que meter el valor del factorial
-    $factorial;
+    $factorial = 1;
+    
     //Creamos un bucle que complete el array de los numeros naturales
     for ($i = 0; $i < 10; $i++){
         $naturales[$i] = $i;
     }
+
     //Escribimos el array de numeros naturales
     echo "Array de numeros naturales: <br>";
     foreach ($naturales as $valor1){
@@ -32,18 +34,20 @@
     }
     echo "<br><br>";
 
-    //Bucle que completa array de factoriales teniendo en cuenta los valores del array de los naturales
-    for ($i = 0; $i < count($naturales); $i++){
-        $numero = $naturales[$i];
-        if($numero == 0)
-            $factorial = 1;
-        else
-            for ($j = 1; $j <= $numero; $j++){
-                $factorial *= $j;
-                echo "<script>console.log($factorial)</script>";
-            }
-        $factoriales[$i] = $factorial;
+    //Bucle que completa array de factoriales al calcular el factorial mediante una funcion
+    for ($i = 0; $i < count($naturales); $i++) {
+        $factoriales[$i] = factorial($naturales[$i]);
     }
+
+    //Funcion que calcula el factorial del numero que le mandamos
+    function factorial($numero) {
+        $res = 1;
+        for($i = 1; $i <= $numero; $i++){
+            $res = $res * $i;
+        }
+        return $res;
+    }
+    
     //Escribimos array de los factoriales
     echo "Array factoriales: <br>";
     $cont = 0;
