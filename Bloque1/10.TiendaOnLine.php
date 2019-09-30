@@ -15,7 +15,7 @@
       "No se puede realizar el envío".<br>
     ❖ si los productos son de ropa se le mostrará el siguiente
       mensaje: "Los gastos de envío son 9 euros".<br>
-    Si la compra tiene un importe entre 19 y 40 euros se le
+    Si la compra tiene un importe entre 19 y 80 euros se le
     indicará el mensaje: "Los gastos de envío son 9 euros".
     Si la compra supera los 80 euros deberemos indicar un mensaje
     de que los portes de envío son gratis.
@@ -41,7 +41,7 @@
             echo "El precio final es: ".$pFinal;
         }
     }
-    elseif ($total_compra > 19 and $total_compra <= 40) {
+    elseif ($total_compra > 19 and $total_compra <= 80) {
         echo "Los gastos de envio son 9 euros<br>";
         if ($tipo_compra == "mascotas") {
             $pFinal = ($total_compra * 1.10) + 9;
