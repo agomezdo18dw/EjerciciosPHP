@@ -44,7 +44,7 @@
             "Noviembre" => ["Aaron", "Enrique"],
             "Diciembre" => ["Anano","Josu"]
         ];
-        //Añadimos a federico en febrero
+        //Añadimos a el nombre nuevo en en el mes correspondiente
         $meses = añadirCumple($_GET['nombre'], $_GET['mes'], $meses);
         //Mostramos el array de los meses con los cumples en forma de lista
         echo "Cumpleaños: <br>";
