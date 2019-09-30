@@ -7,24 +7,29 @@
 </head>
 <body>
     <p>Crea un un array con los meses del año y para cada mes el número de días que tendrá éste año.</p>
+	<p>¿De que año quieres saber los meses?</p>
+	<form action="5.Meses.php" method="post">
+ 		<input type="number" id="año" name="año" placeholders="Inserta un año"/>
+ 		<input type="submit" value="Enviar"/>
+	</form>
+	<br>
 	<?php
-    //Creamos el array
-    $meses = [
-		"Enero" => 31,
-		"Febrero" => 28,
-		"Marzo" => 31,
-		"Abril" => 30,
-		"Mayo" => 31,
-		"Junio" => 30,
-		"Julio" => 31,
-		"Agosto" => 31,
-		"Septiembre" => 30,
-		"Octubre" => 31,
-		"Noviembre" => 30,
-		"Diciembre" => 31
-    ];
-    //Mostramos los meses
-    print_r($meses);
+	$año = $_POST['año'];
+
+    function dias($año){
+		echo "<script>console.log($año)</script>";
+		echo "Meses del año $año: <br>";
+		$meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+		$mes = 1;
+		while ($mes <= 12){
+			$diasDelMes = cal_days_in_month(CAL_GREGORIAN, $mes, $año);
+			echo "En el mes de ".$meses[$mes-1]." hubo $diasDelMes dias.<br>";
+			$mes++;
+		}
+			
+	}
+
+	dias($año);
 	?>
 </body>
 </html>
