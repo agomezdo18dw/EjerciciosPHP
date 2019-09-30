@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ejercicio PHP/Bloque2/7.Potencias</title>
+	<title>Ejercicio PHP/Bloque2/8.Archivo</title>
     <style>
     </style>
 </head>
