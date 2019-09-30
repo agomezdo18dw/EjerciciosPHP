@@ -8,8 +8,8 @@
     que ser impar.</p>
 	<?php
     $base = rand(0, 30);
-    for ($i = 0; $base%2 == 0; $i++)
-        $base = rand(2, 10);
+    while ($base % 2 == 0)
+        $base = rand(0, 30);
     echo "<b>La base tiene:</b> $base asteriscos<br><br>";
 
     $centro = floor($base/2);
