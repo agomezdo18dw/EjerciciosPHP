@@ -21,6 +21,7 @@
     Ainara<br>
     Xabi</p>
 	<?php
+        //Creamos array de cumples
     	$meses = [
             "Enero" => ["Manex", "Laura", "Eneko"],
             "Febrero" => ["Godofredo","Matias"],
@@ -32,10 +33,34 @@
             "Agosto" => ["Leire","Raquel","Maitane"],
             "Septiembre" => ["Adrian","Pablo","Lorena"],
             "Octubre" => ["Mikel","Aitor","Mertxe"],
-            "Noviembre" => ["Aaron", "Iñako"],
+            "Noviembre" => ["Aaron", "Enrique"],
             "Diciembre" => ["Anano","Josu"]
         ];
-    
+        //Mostramos el array de los meses con los cumples en forma de lista
+        echo "Cumpleaños: <br>";
+        foreach ($meses as $mes => $nombres) {
+            echo "<font style='color: blue'>$mes</font><ul>";
+            foreach ($nombres as $nombre) {
+                echo "<li>$nombre</li>";
+            }
+            echo '</ul>';
+        }	
+        //Funcion que añade al array de meses un nuevo cumple
+        function añadirCumple($nombre, $mes, $meses){
+            array_push($meses[$mes], $nombre);
+            echo "Tras añadir a $nombre en el mes de $mes<br>";
+            return $meses;	
+        }
+        //Añadimos a federico en febrero
+        $meses = añadirCumple("Federico", "Febrero", $meses);
+        //Mostramos el nuevo array en forma del lista
+        foreach ($meses as $mes => $nombres) {
+            echo "<font style='color: blue'>$mes</font><ul>";
+            foreach ($nombres as $nombre) {
+                echo "<li>$nombre</li>";
+            }
+            echo '</ul>';
+        }
 	?>
 </body>
 </html>
