@@ -20,6 +20,14 @@
     Mikel<br>
     Ainara<br>
     Xabi</p>
+    <h2>Añadir persona</h2>
+    <p>(Primero poner nombre y lego poner mes, meses con la primera letra mayuscula)</p>
+    <form action="" method="get">
+		<input type="string" name="nombre">
+		<input type="string" name="mes">
+		<input type="submit">
+	</form>
+    <br>
 	<?php
         //Creamos array de cumples
     	$meses = [
@@ -36,6 +44,8 @@
             "Noviembre" => ["Aaron", "Enrique"],
             "Diciembre" => ["Anano","Josu"]
         ];
+        //Añadimos a federico en febrero
+        $meses = añadirCumple($_GET['nombre'], $_GET['mes'], $meses);
         //Mostramos el array de los meses con los cumples en forma de lista
         echo "Cumpleaños: <br>";
         foreach ($meses as $mes => $nombres) {
@@ -50,16 +60,6 @@
             array_push($meses[$mes], $nombre);
             echo "Tras añadir a $nombre en el mes de $mes<br>";
             return $meses;	
-        }
-        //Añadimos a federico en febrero
-        $meses = añadirCumple("Federico", "Febrero", $meses);
-        //Mostramos el nuevo array en forma del lista
-        foreach ($meses as $mes => $nombres) {
-            echo "<font style='color: blue'>$mes</font><ul>";
-            foreach ($nombres as $nombre) {
-                echo "<li>$nombre</li>";
-            }
-            echo '</ul>';
         }
 	?>
 </body>
