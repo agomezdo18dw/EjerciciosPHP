@@ -17,10 +17,10 @@
      */
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
-    $contactos = [];
+    $contactos = ['Numero de contacto' => ['Nombre', 'Email']];
+    
     function añadirContacto($nombre, $email, $contactos) {
-        array_push($contactos[], $nombre);
-        array_push($contactos[$nombre], $email);
+        
     }
 
     function mostrarInformacion(){
