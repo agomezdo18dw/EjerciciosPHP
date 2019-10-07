@@ -1,0 +1,28 @@
+body {
+    margin: 0 auto;
+    width: max-content;
+}
+#fieldset {
+    width: 1400px;
+    margin-top: 3%;
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.contacto {
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #c2c2c2;
+}
+#error {
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #FFF100;
+}
