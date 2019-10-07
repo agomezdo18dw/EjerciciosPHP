@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,57 +13,54 @@
         #fieldset {
             width: 700px;
             margin-top: 3%;
+            text-align: center;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
         }
-        
+        .contacto {
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            background-color: #c2c2c2;
+        }
     </style>
 </head>
 <body>
     <fieldset id="fieldset">
         <legend>Añadir contacto</legend>
         <form action="" method="post">
-		    <input type="text" name="nombre" placeholder="Nombre">
-            <input type="text" name="email"  placeholder="Email">
+		    <input type="text" name="nombre" placeholder="Nombre" value="<?php echo $_POST['nombre'] ?>">
+            <input type="text" name="email"  placeholder="Email" value="<?php echo $_POST['email'] ?>">
 		    <input type="submit" value="Añadir a agenda">
 	    </form>
     </fieldset>
-	<?php
+    <fieldset id="fieldset">
+        <legend>Contactos</legend>
+        <?php
     /*
      *Author: Adrián Gómez
      */
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
-    $contactos = ['Numero de contacto' => ['Nombre', 'Email']];
+    $contactos = [Adrian => "agomezdo18dw",
+                  Aitor => "aortizde18dw"];
     
-    function añadirContacto($nombre, $email, $contactos) {
-        
+    
+    foreach ($contactos as $nombre => $email) {
+        echo "<div class='contacto'>";
+        echo "<h2>$nombre</h2>";
+        echo "<p>$email</p>";
+        echo "</div>";
     }
-
-    function mostrarInformacion(){
-
-    }
-    //Funciones extra que he utilizado para gestionar la agenda
-
-			function stringtoarray ($string_agenda,&$array_agenda) {
-				//Convierte la agenda de datos (string) en un array asociativo
-				$a=explode (";",$string_agenda);
-				for($i=0; $i<count($a); $i++) {
-					$array_agenda[$a[$i]]=$a[$i+1];
-					$i++;
-				}
-				return true;
-			}
-
-			function arraytostring ($array_agenda) {
-				//Convierte el array asociativo en una cadena de caracteres cada elemento separado por ;
-				foreach($array_agenda as $key_nombre => $value)
-				{
-				  $string_agenda.=$key_nombre.";".$value.";";
-				}
-				//Quitamos el ultimo ';''
-				$string_agenda=substr($string_agenda, 0, -1);
-				return $string_agenda;
-			}
     añadirContacto($nombre, $email, $contactos);
+
+    function añadirContacto($nombre, $email, $contactos) {
+        $contactos[$nombre] = $email;
+    }
 	?>
+    </fieldset>
 </body>
 </html>
