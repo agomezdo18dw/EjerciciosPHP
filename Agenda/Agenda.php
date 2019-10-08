@@ -5,11 +5,10 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Agenda <?php echo $_POST['nombreIndex']?></title>
+	<title>Ejercicio PHP/Agenda</title>
     <link rel="stylesheet" type="text/css" href="css/css.css">
 </head>
 <body >
-    <h1>Agenda de <?php echo $_POST['nombreIndex']?></h1>
     <fieldset id="fieldset">
         <legend>Añadir contacto</legend>
         <form action="" method="post">
