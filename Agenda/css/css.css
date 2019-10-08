@@ -1,6 +1,7 @@
 body {
     margin: 0 auto;
     width: max-content;
+    text-align: center;
 }
 #fieldset {
     width: 1400px;
