@@ -81,13 +81,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Este es el artículo número {{$id}} de {{$nombre}}.
                 </div>
 
                 <div class="links">
-                    <a href="contacto">Contacto</a>
-                    <a href="blog">Blog</a>
-                    <a href="blog2">Blog con ID</a>
+                    <a href="/contacto">Contacto</a>
+                    <a href="/blog/1">Blog</a>
+                    <a href="/blog2/1/Adrian">Blog con ID</a>
                 </div>
             </div>
         </div>
