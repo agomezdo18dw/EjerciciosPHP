@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Este es el artículo numero {{$id}}
+                    Kaixo {{$nombre}}!
                 </div>
 
                 <div class="links">

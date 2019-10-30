@@ -85,9 +85,13 @@
                 </div>
 
                 <div class="links">
-                    <a href="/contacto">Contacto</a>
-                    <a href="/blog/1">Blog</a>
-                    <a href="/blog2/1/Adrian">Blog con ID</a>
+                    <a href="{{route('/')}}">Inicio</a>
+                    <a href="{{route('contacto')}}">Contacto</a>
+                    <a href="{{route('blog',['1'])}}">Blog</a>
+                    <a href="{{route('blog2',['1','Adrian'])}}">Blog con ID</a>
+                    <a href="{{route('saludo')}}">Saludo</a>
+                    <a href="{{route('saludoConNombre',['Adrian'])}}">Saludo con nombre</a>
+                    <a href="{{route('saludoColor',['Adrian','0500ff'])}}">Saludo con color</a>
                 </div>
             </div>
         </div>
