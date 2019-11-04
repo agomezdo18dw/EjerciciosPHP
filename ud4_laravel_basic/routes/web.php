@@ -16,15 +16,15 @@ Route::get('/', function () {
 })->name('/');
 //--------Tarea 4.1--------
 Route::get('contacto', function () {
-    return view('contacto');
+    return view('4-1/contacto');
 })->name('contacto');
 
 Route::get('blog/{id}', function ($id) {
-    return view('blog', ['id'=>$id]);
+    return view('4-1/blog', ['id'=>$id]);
 })->name('blog');
 
 Route::get('blog2/{id}/{nombre}', function ($id, $nombre) {
-    return view('blog2', ['id'=>$id, 'nombre'=>$nombre]);
+    return view('4-1/blog2', ['id'=>$id, 'nombre'=>$nombre]);
 })->where(array('nombre'=>'[a-zA-Z]+','id'=>'[0-9]+'))->name('blog2');
 //------Fin tarea 4.1------
 
