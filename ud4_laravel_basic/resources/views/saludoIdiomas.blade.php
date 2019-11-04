@@ -80,9 +80,9 @@
             @endif
 
             <div class="content">
-                <p style="font-size: 50px">
-                    
-                </p>
+                @foreach($saludos as $saludo)
+                    <p style="font-size: 50px">{{$saludo -> saludo}} {{$nombre}}</p>
+                @endforeach
                 <div class="links">
                     <h2>Inicio</h2>
                     <a href="{{route('/')}}">Inicio</a>

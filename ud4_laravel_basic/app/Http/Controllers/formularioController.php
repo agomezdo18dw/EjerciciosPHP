@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use File;
 
 class formularioController extends Controller
 {
@@ -11,9 +12,8 @@ class formularioController extends Controller
     }
 
     public function mostrarDatos(Request $request){
-        $nombre = $request -> input('nombre');
-        $apellido = $request -> input('apellido');
-        return view('saludoConNombre',['nombre'=>$nombre,'apellido'=>$apellido]);
+        $nombre = $request -> input('nombre')." ".$request -> input('apellido');
+        return view('saludoConNombre',['nombre'=>$nombre]);
     }
 
     public function mostrarFormIdiomas(){
@@ -21,7 +21,9 @@ class formularioController extends Controller
     }
 
     public function mostrarDatos2(Request $request){
-        $nom = $nombre = $request -> input('nombre')." ".$apellido = $request -> input('apellido');
-        return view('saludoIdiomas',['nombre'=>$nom]);
+        $json = File::get('json/saludos.json');
+        $saludos = json_decode($json);
+        $nombre = $request -> input('nombre')." ".$request -> input('apellido');
+        return view('saludoIdiomas',['saludos'=>$saludos,'nombre'=>$nombre]);
     }
 }

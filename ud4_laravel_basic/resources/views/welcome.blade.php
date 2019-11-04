@@ -97,7 +97,7 @@
                 <div class="links">
                     <h2>Tarea 4.2</h2>
                     <a href="{{route('saludo')}}">Saludo</a>
-                    <a href="{{route('saludoConNombre',['Adrian','Gomez'])}}">Saludo con nombre</a>
+                    <a href="{{route('saludoConNombre',['Adrian'])}}">Saludo con nombre</a>
                     <a href="{{route('saludoColor',['Adrian','0500ff'])}}">Saludo con color</a>
                 </div>
                 <div class="links">
