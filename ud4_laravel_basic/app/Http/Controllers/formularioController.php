@@ -15,4 +15,13 @@ class formularioController extends Controller
         $apellido = $request -> input('apellido');
         return view('saludoConNombre',['nombre'=>$nombre,'apellido'=>$apellido]);
     }
+
+    public function mostrarFormIdiomas(){
+        return view('formularioIdiomas');
+    }
+
+    public function mostrarDatos2(Request $request){
+        $nom = $nombre = $request -> input('nombre')." ".$apellido = $request -> input('apellido');
+        return view('saludoIdiomas',['nombre'=>$nom]);
+    }
 }

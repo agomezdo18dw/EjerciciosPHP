@@ -80,11 +80,9 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Este es el artículo numero {{$id}}
-                </div>
-
+                <p style="font-size: 50px">Este es el artículo numero {{$id}}</p>
                 <div class="links">
+                    <h2>Inicio</h2>
                     <a href="{{route('/')}}">Inicio</a>
                 </div>
                 <div class="links">
@@ -102,6 +100,7 @@
                 <div class="links">
                     <h2>Tarea 4.3</h2>
                     <a href="{{route('formulario')}}">Formulario</a>
+                    <a href="{{route('formularioIdiomas')}}">Formulario Idiomas</a>
                 </div>
             </div>
         </div>

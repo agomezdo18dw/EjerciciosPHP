@@ -80,7 +80,21 @@
             @endif
 
             <div class="content">
-                <p style="font-size: 50px">Kaixo {{$nombre}}!</p>
+                <br><br><br>
+                <p style="font-size: 50px">
+                    Formulario Idiomas
+                </p>
+                <form action="{{route('mostrarDatos2')}}" method="POST">
+                    @csrf
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre" placeholder="Ej: Aitor">
+                    <br>
+                    <label>Apellido:</label>
+                    <input type="text" name="apellido" placeholder="Ej: Fernandez">
+                    <br>
+                    <input type="submit" value="Saludar en idioams">
+                </form>
+                <br>
                 <div class="links">
                     <h2>Inicio</h2>
                     <a href="{{route('/')}}">Inicio</a>
@@ -102,7 +116,7 @@
                     <a href="{{route('formulario')}}">Formulario</a>
                     <a href="{{route('formularioIdiomas')}}">Formulario Idiomas</a>
                 </div>
-            </p>
+            </div>
         </div>
     </body>
 </html>

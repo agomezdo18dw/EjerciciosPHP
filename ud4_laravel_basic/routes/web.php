@@ -30,13 +30,15 @@ Route::get('blog2/{id}/{nombre}', function ($id, $nombre) {
 
 //--------Tarea 4.2--------
 Route::get('saludo', 'SaludoController@saludo')->name('saludo');
-Route::get('saludoConNombre/{nombre}/{apellido}', 'SaludoController@saludoConNombre')->name('saludoConNombre');
+Route::get('saludoConNombre/{nombre}', 'SaludoController@saludoConNombre')->name('saludoConNombre');
 Route::get('saludoColor/{nombre}/{color?}', 'SaludoController@saludoColor')->name('saludoColor');
 //------Fin tarea 4.2------
 
 //--------Tarea 4.3--------
 Route::get('formulario', 'formularioController@mostrarForm')->name('formulario');
 Route::get('mostrarDatos', 'formularioController@mostrarDatos')->name('mostrarDatos');
+Route::get('formularioIdiomas', 'formularioController@mostrarFormIdiomas')->name('formularioIdiomas');
+Route::post('saludoIdiomas', 'formularioController@mostrarDatos2')->name('mostrarDatos2');
 //------Fin tarea 4.3------
 
 //--------Tarea 4.4--------

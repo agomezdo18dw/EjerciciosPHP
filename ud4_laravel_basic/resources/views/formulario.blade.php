@@ -80,7 +80,10 @@
             @endif
 
             <div class="content">
+                <br><br><br>
+                <p style="font-size: 50px">Formulario</p>
                 <form action="{{route('mostrarDatos')}}" method="GET">
+                    @csrf
                     <label>Nombre:</label>
                     <input type="text" name="nombre" placeholder="Ej: Aitor">
                     <br>
@@ -91,6 +94,7 @@
                 </form>
                 <br>
                 <div class="links">
+                    <h2>Inicio</h2>
                     <a href="{{route('/')}}">Inicio</a>
                 </div>
                 <div class="links">
@@ -108,8 +112,9 @@
                 <div class="links">
                     <h2>Tarea 4.3</h2>
                     <a href="{{route('formulario')}}">Formulario</a>
+                    <a href="{{route('formularioIdiomas')}}">Formulario Idiomas</a>
                 </div>
-            </div>
+            </p>
         </div>
     </body>
 </html>

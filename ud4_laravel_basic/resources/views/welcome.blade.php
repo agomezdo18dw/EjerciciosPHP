@@ -85,6 +85,7 @@
                 </div>
 
                 <div class="links">
+                    <h2>Inicio</h2>
                     <a href="{{route('/')}}">Inicio</a>
                 </div>
                 <div class="links">
@@ -102,6 +103,7 @@
                 <div class="links">
                     <h2>Tarea 4.3</h2>
                     <a href="{{route('formulario')}}">Formulario</a>
+                    <a href="{{route('formularioIdiomas')}}">Formulario Idiomas</a>
                 </div>
             </div>
         </div>
