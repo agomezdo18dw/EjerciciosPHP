@@ -81,17 +81,27 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    UD4_Laravel_Basic
                 </div>
 
                 <div class="links">
                     <a href="{{route('/')}}">Inicio</a>
+                </div>
+                <div class="links">
+                    <h2>Tarea 4.1</h2>
                     <a href="{{route('contacto')}}">Contacto</a>
                     <a href="{{route('blog',['1'])}}">Blog</a>
                     <a href="{{route('blog2',['1','Adrian'])}}">Blog con ID</a>
+                </div>
+                <div class="links">
+                    <h2>Tarea 4.2</h2>
                     <a href="{{route('saludo')}}">Saludo</a>
-                    <a href="{{route('saludoConNombre',['Adrian'])}}">Saludo con nombre</a>
+                    <a href="{{route('saludoConNombre',['Adrian','Gomez'])}}">Saludo con nombre</a>
                     <a href="{{route('saludoColor',['Adrian','0500ff'])}}">Saludo con color</a>
+                </div>
+                <div class="links">
+                    <h2>Tarea 4.3</h2>
+                    <a href="{{route('formulario')}}">Formulario</a>
                 </div>
             </div>
         </div>

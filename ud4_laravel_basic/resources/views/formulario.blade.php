@@ -80,10 +80,16 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Adrián Gómez Domínguez
-                </div>
-
+                <form action="{{route('mostrarDatos')}}" method="GET">
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre" placeholder="Ej: Aitor">
+                    <br>
+                    <label>Apellido:</label>
+                    <input type="text" name="apellido" placeholder="Ej: Fernandez">
+                    <br>
+                    <input type="submit" value="Saludar">
+                </form>
+                <br>
                 <div class="links">
                     <a href="{{route('/')}}">Inicio</a>
                 </div>

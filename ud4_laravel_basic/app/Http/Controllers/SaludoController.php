@@ -10,8 +10,8 @@ class SaludoController extends Controller
         return view('saludo');
     }
 
-    public function saludoConNombre($nombre){
-        return view('saludoConNombre', ['nombre'=>$nombre]);
+    public function saludoConNombre($nombre, $apellido){
+        return view('saludoConNombre', ['nombre'=>$nombre, 'apellido'=>$apellido]);
     }
 
     public function saludoColor($nombre, $color='ff0000'){
