@@ -65,25 +65,10 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
-                <br><br><br>
-                <p style="font-size: 50px">
+                <div class="title m-b-md">
                     Formulario Idiomas
-                </p>
+                </div>
                 <form action="{{route('mostrarDatos2')}}" method="POST">
                     @csrf
                     <label>Nombre:</label>
@@ -97,7 +82,9 @@
                 <br>
                 @isset($saludos)
                     @foreach($saludos as $saludo)
-                    <div class="title m-b-md">{{$saludo -> saludo}} {{$nombre}}</div>
+                        <div class="title m-b-md">
+                            {{$saludo -> saludo}} {{$nombre}}!
+                        </div>
                     @endforeach
                 @endisset
                 <div class="links">

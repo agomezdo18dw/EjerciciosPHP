@@ -85,10 +85,6 @@
                 </div>
 
                 <div class="links">
-                    <h2>Inicio</h2>
-                    <a href="{{route('/')}}">Inicio</a>
-                </div>
-                <div class="links">
                     <h2>Tarea 4.1</h2>
                     <a href="{{route('contacto')}}">Contacto</a>
                     <a href="{{route('blog',['1'])}}">Blog</a>
