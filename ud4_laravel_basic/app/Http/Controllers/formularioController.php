@@ -24,6 +24,6 @@ class formularioController extends Controller
         $json = File::get('json/saludos.json');
         $saludos = json_decode($json);
         $nombre = $request -> input('nombre')." ".$request -> input('apellido');
-        return view('saludoIdiomas',['saludos'=>$saludos,'nombre'=>$nombre]);
+        return view('formularioIdiomas',['saludos'=>$saludos,'nombre'=>$nombre]);
     }
 }
