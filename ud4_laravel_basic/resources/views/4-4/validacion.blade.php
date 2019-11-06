@@ -61,50 +61,51 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            /*Para quitar al number las flechas de subir y bajar numero*/
+            input[type=number]::-webkit-outer-spin-button,
+
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance:textfield;
+            }
+            /*Fin modificacion number*/
+
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
                 <div class="title m-b-md">
-                    UD4_Laravel_Basic
+                    Formulario para validar
                 </div>
-
-                <div class="links">
-                    <h2>Tarea 4.1</h2>
-                    <a href="{{route('contacto')}}">Contacto</a>
-                    <a href="{{route('blog',['1'])}}">Blog</a>
-                    <a href="{{route('blog2',['1','Adrian'])}}">Blog con ID</a>
-                </div>
-                <div class="links">
-                    <h2>Tarea 4.2</h2>
-                    <a href="{{route('saludo')}}">Saludo</a>
-                    <a href="{{route('saludoConNombre',['Adrian'])}}">Saludo con nombre</a>
-                    <a href="{{route('saludoColor',['Adrian','0500ff'])}}">Saludo con color</a>
-                </div>
-                <div class="links">
-                    <h2>Tarea 4.3</h2>
-                    <a href="{{route('formulario')}}">Formulario</a>
-                    <a href="{{route('formularioIdiomas')}}">Formulario Idiomas</a>
-                </div>
-                <div class="links">
-                    <h2>Tarea 4.4</h2>
-                    <a href="{{route('validacion')}}">Formulario validacion</a>
-                </div>
+                <form action="{{route('val')}}" method="GET">
+                    @csrf
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre" placeholder="Ej: Aitor" value="{{old('nombre')}}">
+                    <br>
+                    <label>Apellido:</label>
+                    <input type="text" name="apellido" placeholder="Ej: Fernandez" value="{{old('apellido')}}">
+                    <br>
+                    <label>Email:</label>
+                    <input type="text" name="email" placeholder="Ej: afernandez@gmail.com" value="{{old('email')}}">
+                    <br>
+                    <label>Telefono:</label>
+                    <input type="number" name="tel" placeholder="Ej: 666999666" value="{{old('tel')}}">
+                    <br>
+                    <input type="submit" value="Validar datos">
+                </form>
+                @isset()
+                    @foreach($saludos as $saludo)
+                        <div class="title m-b-md">
+                            {{$saludo -> saludo}} {{$nombre}}!
+                        </div>
+                    @endforeach
+                @endisset
             </div>
         </div>
     </body>

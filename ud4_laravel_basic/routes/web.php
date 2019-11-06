@@ -42,5 +42,6 @@ Route::post('mostrarDatos2', 'formularioController@mostrarDatos2')->name('mostra
 //------Fin tarea 4.3------
 
 //--------Tarea 4.4--------
-
+Route::get('validacion', 'validacionController@mostrarFormulario')->name('validacion');
+Route::get('val', 'validacionController@validacion')->name('val');
 //------Fin tarea 4.4------
