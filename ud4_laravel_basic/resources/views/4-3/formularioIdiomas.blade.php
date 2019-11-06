@@ -72,10 +72,10 @@
                 <form action="{{route('mostrarDatos2')}}" method="POST">
                     @csrf
                     <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="Ej: Aitor">
+                    <input type="text" name="nombre" placeholder="Ej: Aitor" value="{{old('nombre')}}">
                     <br>
                     <label>Apellido:</label>
-                    <input type="text" name="apellido" placeholder="Ej: Fernandez">
+                    <input type="text" name="apellido" placeholder="Ej: Fernandez" value="{{old('apellido')}}">
                     <br>
                     <input type="submit" value="Saludar en idioams">
                 </form>
