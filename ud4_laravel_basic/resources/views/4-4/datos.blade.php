@@ -85,53 +85,15 @@
         <div class="flex-center position-ref full-height">
             <label class="content">
                 <div class="title m-b-md">
-                    Formulario para validar
+                    Datos del formulario
                 </div>
-                <form action="{{route('val')}}" method="GET">
-                    @csrf
-                    <label>Nombre:</label>
-                    <input type="text" name="nombre" placeholder="Ej: Aitor" value="{{old('nombre')}}">
-                    @if ($errors->has('nombre'))
-                        <label class="error">
-                            {{$errors->first('nombre')}}
-                        </label>
-                    @endif
-                    <br>
-                    <label>Apellido:</label>
-                    <input type="text" name="apellido" placeholder="Ej: Fernandez" value="{{old('apellido')}}">
-                    @if ($errors->has('apellido'))
-                        <label class="error">
-                            {{$errors->first('apellido')}}
-                        </label>
-                    @endif
-                    <br>
-                    <label>Email:</label>
-                    <input type="text" name="email" placeholder="Ej: afernandez@gmail.com" value="{{old('email')}}">
-                    @if ($errors->has('email'))
-                        <label class="error">
-                            {{$errors->first('email')}}
-                        </label>
-                    @endif
-                    <br>
-                    <label>Telefono:</label>
-                    <input type="number" name="tel" placeholder="Ej: 666999666" value="{{old('tel')}}">
-                    @if ($errors->has('tel'))
-                        <label class="error">
-                            {{$errors->first('tel')}}
-                        </label>
-                    @endif
-                    <br>
-                    <input type="submit" value="Validar datos">
-                </form>
-                <!--@if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                <b>Nombre:</b> {{$nombre}}<br>
+                <b>Apellido:</b> {{$apellido}}<br>
+                <b>Email:</b> {{$email}}<br>
+                <b>Telefono:</b> {{$tel}}<br>
+                <div class="links">
+                    <a href="{{route('/')}}">Inicio</a>
                 </div>
-                @endif-->
             </div>
         </div>
     </body>

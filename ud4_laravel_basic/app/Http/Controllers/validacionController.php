@@ -12,13 +12,16 @@ class validacionController extends Controller
 
     public function validacion(Request $request){
 
-        $validatedData = $request->validate([
+        $request->validate([
             'nombre' => 'required|min:2|max:15',
             'apellido' => 'required|min:2|max:20',
             'email' => 'required|email',
-            'tel' => 'regex:/^[9|6|7][0-9]{8}$/'
+            'tel' => 'regex:/^[679][0-9]{8}$/'
         ]);
             
-        return view('4-4/datos', );
+        return view('4-4/datos')->with('nombre',$request->input('nombre'))->
+                                with('apellido',$request->input('apellido'))->
+                                with('email',$request->input('email'))->
+                                with('tel',$request->input('tel'));
     }
 }
