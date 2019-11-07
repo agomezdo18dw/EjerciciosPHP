@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactoRequest;
 
 class validacionController extends Controller
 {
@@ -20,6 +21,17 @@ class validacionController extends Controller
         ]);
             
         return view('4-4/datos')->with('nombre',$request->input('nombre'))->
+                                with('apellido',$request->input('apellido'))->
+                                with('email',$request->input('email'))->
+                                with('tel',$request->input('tel'));
+    }
+
+    public function mostrarFormulario2(){
+        return view('4-4/validacion2');
+    }
+
+    public function validacion2(ContactoRequest $request){
+        return view('4-4/datos2')->with('nombre',$request->input('nombre'))->
                                 with('apellido',$request->input('apellido'))->
                                 with('email',$request->input('email'))->
                                 with('tel',$request->input('tel'));

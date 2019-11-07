@@ -61,50 +61,38 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            /*Para quitar al number las flechas de subir y bajar numero*/
+            input[type=number]::-webkit-outer-spin-button,
+
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance:textfield;
+            }
+            /*Fin modificacion number*/
+            /*Estilo errores*/
+            .error{
+                color: red;
+            }
+            /*Fin estilo errores*/
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
+            <label class="content">
                 <div class="title m-b-md">
-                    UD4_Laravel_Basic
+                    Datos del formulario2
                 </div>
-
+                <b>Nombre:</b> {{$nombre}}<br>
+                <b>Apellido:</b> {{$apellido}}<br>
+                <b>Email:</b> {{$email}}<br>
+                <b>Telefono:</b> {{$tel}}<br>
                 <div class="links">
-                    <h2>Tarea 4.1</h2>
-                    <a href="{{route('contacto')}}">Contacto</a>
-                    <a href="{{route('blog',['1'])}}">Blog</a>
-                    <a href="{{route('blog2',['1','Adrian'])}}">Blog con ID</a>
-                </div>
-                <div class="links">
-                    <h2>Tarea 4.2</h2>
-                    <a href="{{route('saludo')}}">Saludo</a>
-                    <a href="{{route('saludoConNombre',['Adrian'])}}">Saludo con nombre</a>
-                    <a href="{{route('saludoColor',['Adrian','0500ff'])}}">Saludo con color</a>
-                </div>
-                <div class="links">
-                    <h2>Tarea 4.3</h2>
-                    <a href="{{route('formulario')}}">Formulario</a>
-                    <a href="{{route('formularioIdiomas')}}">Formulario Idiomas</a>
-                </div>
-                <div class="links">
-                    <h2>Tarea 4.4</h2>
-                    <a href="{{route('validacion')}}">Formulario validacion</a>
-                    <a href="{{route('validacion2')}}">Formulario validacion con mensajes editados</a>
+                    <a href="{{route('/')}}">Inicio</a>
                 </div>
             </div>
         </div>
