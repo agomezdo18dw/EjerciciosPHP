@@ -46,4 +46,6 @@ Route::get('validacion', 'validacionController@mostrarFormulario')->name('valida
 Route::get('val', 'validacionController@validacion')->name('val');
 Route::get('validacion2', 'validacionController@mostrarFormulario2')->name('validacion2');
 Route::get('val2', 'validacionController@validacion2')->name('val2');
+Route::get('validaciondni', 'validacionController@mostrarFormulariodni')->name('validaciondni');
+Route::get('valdni', 'validacionController@validaciondni')->name('valdni');
 //------Fin tarea 4.4------

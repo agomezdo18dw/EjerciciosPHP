@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactoRequest;
+use App\Rules\DniRule;
 
 class validacionController extends Controller
 {
@@ -35,5 +36,21 @@ class validacionController extends Controller
                                 with('apellido',$request->input('apellido'))->
                                 with('email',$request->input('email'))->
                                 with('tel',$request->input('tel'));
+    }
+
+    public function mostrarFormulariodni(){
+        return view('extra/formulariodni');
+    }
+
+    public function validaciondni(ContactoRequest $request){
+        $validateData = $request->validate([
+            'dni' => ['required',new DniRule]
+        ]);
+        //$validated = $request->validated;
+        return view('extra/datosdni')->with('nombre',$request->input('nombre'))->
+                                with('apellido',$request->input('apellido'))->
+                                with('email',$request->input('email'))->
+                                with('tel',$request->input('tel'))->
+                                with('dni',$request->input('dni'));
     }
 }

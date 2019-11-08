@@ -106,6 +106,10 @@
                     <a href="{{route('validacion')}}">Formulario validacion</a>
                     <a href="{{route('validacion2')}}">Formulario validacion con mensajes editados</a>
                 </div>
+                <div class="links">
+                    <h2>Tarea extra</h2>
+                    <a href="{{route('validaciondni')}}">Validar DNI</a>
+                </div>
             </div>
         </div>
     </body>
