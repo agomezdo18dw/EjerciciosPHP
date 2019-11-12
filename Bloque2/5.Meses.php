@@ -22,10 +22,8 @@
 		echo "Meses del año $año: <br>";
 		//Creamos array con los meses para posteriormente escribirlos
 		$meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-		//Iniciamos una variable con el numero del mes
-		$mes = 1;
 		//Creamos bucle para que coja los dias de cada mes y los escribimos
-		while ($mes <= 12){
+		while ($meses.length()){
 			$diasDelMes = cal_days_in_month(CAL_GREGORIAN, $mes, $año);
 			echo "En el mes de ".$meses[$mes-1]." hubo $diasDelMes dias.<br>";
 			$mes++;
