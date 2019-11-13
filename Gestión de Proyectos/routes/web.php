@@ -12,17 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
-Route::get('empleados', function () {
-    return view('empleados');
-});
+Route::get('empleado', 'EmpleadoController@verEmpleados')->name('empleado');
 
-Route::get('proyectos', function () {
-    return view('proyectos');
-});
+Route::get('proyectos', 'EmpleadoController@verProyectos')->name('proyectos');
 
-Route::get('departamentos', function () {
-    return view('departamentos');
-});
+Route::get('empleados', 'EmpleadoController@verDepartamentos')->name('departamentos');
