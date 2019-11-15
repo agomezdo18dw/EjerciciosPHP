@@ -20,7 +20,10 @@ class CreateTableProyecto extends Migration
             $table->date('fechainicio');
             $table->date('fechafin');
             $table->integer('horasestimadas');
+            $table->unsignedBigInteger('empleadoRes');
             $table->timestamps();
+
+            $table->foreign('empleadoRes')->references('id')->on('empleados');
         });
     }
 

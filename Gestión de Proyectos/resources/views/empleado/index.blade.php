@@ -12,6 +12,7 @@
         <th>Nombre</th>
         <th>Email</th>
         <th>Telefono</th>
+        <th>Proyecto</th>
       </tr>
       @foreach($empleados as $empleado)
       <tr>
@@ -19,6 +20,9 @@
         <td>{{$empleado->nombre}}</td>
         <td>{{$empleado->apellido}}</td>
         <td>{{$empleado->telefono}}</td>
+        @if(!is_null($empleado->proyecto))
+          <td>{{$empleado->proyecto->nombre}}</td>
+        @endif
       </tr>
       @endforeach
     </table>
