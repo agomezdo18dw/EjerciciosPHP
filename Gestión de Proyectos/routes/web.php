@@ -21,3 +21,4 @@ Route::get('empleado/{id}', 'EmpleadoController@verEmpleado')->name('empleado.sh
 Route::get('proyectos', 'EmpleadoController@verProyectos')->name('proyectos.index');
 
 Route::get('departamentos', 'EmpleadoController@verDepartamentos')->name('departamentos.index');
+Route::get('departamento/{id}', 'EmpleadoController@verDepartamento')->name('departamento.show');

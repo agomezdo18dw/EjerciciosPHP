@@ -28,4 +28,9 @@ class EmpleadoController extends Controller
         $departamentos = Departamento::all();
         return view('departamentos/index')->with(['departamentos' => $departamentos]);
     }
+
+    public function verDepartamento($id){
+        $departamentos = Departamento::where('id', '=', $id)->get();
+        return view('departamentos/show')->with(['departamentos' => $departamentos]);
+    }
 }
