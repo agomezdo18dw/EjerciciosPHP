@@ -14,6 +14,11 @@ class EmpleadoController extends Controller
         return view('empleado/index')->with(['empleados' => $empleados]);
     }
 
+    public function verEmpleado($id){
+        $empleados = Empleado::where('id', '=', $id)->get();
+        return view('empleado/show')->with(['empleados' => $empleados]);
+    }
+
     public function verProyectos(){
         $proyectos = Proyecto::all();
         return view('proyectos/index')->with(['proyectos' => $proyectos]);

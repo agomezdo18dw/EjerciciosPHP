@@ -4,8 +4,7 @@
 
 @section('content')
 
-  <h2>Empleados</h2>
-
+  <h2>Empleado</h2>
     <table>
       <tr>
         <th>Id</th>
@@ -16,15 +15,18 @@
       </tr>
       @foreach($empleados as $empleado)
       <tr>
-        <td><a href="empleado/{{$empleado->id}}">{{$empleado->id}}</a></td>
+        <td>{{$empleado->id}}</td>
         <td>{{$empleado->nombre}} {{$empleado->apellido}}</td>
         <td>{{$empleado->email}}</td>
         <td>{{$empleado->telefono}}</td>
         @if(!is_null($empleado->proyecto))
           <td>{{$empleado->proyecto->nombre}}</td>
+        @else
+
         @endif
       </tr>
       @endforeach
+      
     </table>
 
 @endsection
