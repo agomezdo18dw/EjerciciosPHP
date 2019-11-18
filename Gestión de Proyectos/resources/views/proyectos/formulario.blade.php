@@ -15,7 +15,7 @@
         <p>Empleado respondable: 
         <select name="responsable">
             @foreach($empleados as $empleado)
-                <option value="{{$empleado->id}}">{{$empleado->nombre}}</option>
+                <option value="{{$empleado->id}}">{{$empleado->nombre}} {{$empleado->apellido}}</option>
             @endforeach
         </select>
         <p>

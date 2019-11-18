@@ -12,11 +12,11 @@
             <p>Fecha inicio: <input type="date" name="fechaIni" placeholder="2019-12-10" value="{{$proyecto->fechainicio}}"></p>
             <p>Fecha fin: <input type="date" name="fechaFin" placeholder="2019-12-20" value="{{$proyecto->fechafin}}"></p>
             <p>Horas estimadas: <input type="number" name="horas" placeholder="300" value="{{$proyecto->horasestimadas}}"></p>
-            <p>Empleado respondable: {{$proyecto->empleado->nombre}} 
+            <p>Empleado respondable: {{$proyecto->empleado->nombre}} {{$proyecto->empleado->apellido}}
             <!-- ->
             <select name="responsable">
                 @foreach($empleados as $empleado)
-                    <option value="{{$empleado->id}}">{{$empleado->nombre}}</option>
+                    <option value="{{$empleado->id}}">{{$empleado->nombre}} {{$empleado->apellido}}</option>
                 @endforeach
             </select>
             -->
