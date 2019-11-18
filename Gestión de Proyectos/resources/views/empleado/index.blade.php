@@ -16,7 +16,7 @@
       </tr>
       @foreach($empleados as $empleado)
       <tr>
-        <td><a href="empleado/{{$empleado->id}}">{{$empleado->id}}</a></td>
+        <td><a href="{{route('empleado.show', $empleado->id)}}">{{$empleado->id}}</a></td>
         <td>{{$empleado->nombre}} {{$empleado->apellido}}</td>
         <td>{{$empleado->email}}</td>
         <td>{{$empleado->telefono}}</td>
