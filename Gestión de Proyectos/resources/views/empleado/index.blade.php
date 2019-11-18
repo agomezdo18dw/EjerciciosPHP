@@ -4,8 +4,8 @@
 
 @section('content')
 
-  <h2>Empleados</h2>
-
+  <h2><b>Empleados</b></h2>
+  
     <table>
       <tr>
         <th>Id</th>
@@ -21,7 +21,7 @@
         <td>{{$empleado->email}}</td>
         <td>{{$empleado->telefono}}</td>
         @if(!is_null($empleado->proyecto))
-          <td>{{$empleado->proyecto->nombre}}</td>
+          <td><a href="{{route('proyecto.show', $empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a></td>
         @endif
       </tr>
       @endforeach

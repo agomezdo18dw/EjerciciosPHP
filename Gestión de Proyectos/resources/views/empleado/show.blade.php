@@ -4,7 +4,9 @@
 
 @section('content')
 
-  <h2>Empleado</h2>
+@foreach($empleados as $empleado)
+  <h2><b>Empleado: </b>{{$empleado->nombre}} {{$empleado->apellido}}</h2>
+  
     <table>
       <tr>
         <th>Id</th>
@@ -13,20 +15,16 @@
         <th>Telefono</th>
         <th>Proyecto</th>
       </tr>
-      @foreach($empleados as $empleado)
       <tr>
         <td>{{$empleado->id}}</td>
         <td>{{$empleado->nombre}} {{$empleado->apellido}}</td>
         <td>{{$empleado->email}}</td>
         <td>{{$empleado->telefono}}</td>
         @if(!is_null($empleado->proyecto))
-          <td>{{$empleado->proyecto->nombre}}</td>
-        @else
-
+          <td><a href="{{route('proyecto.show', $empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a></td>
         @endif
       </tr>
-      @endforeach
-      
     </table>
+@endforeach
 
 @endsection

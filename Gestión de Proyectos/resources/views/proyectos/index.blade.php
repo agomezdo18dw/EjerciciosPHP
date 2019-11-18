@@ -4,8 +4,8 @@
 
 @section('content')
 
-  <h2>Proyectos</h2>
-
+  <h2><b>Proyectos</b></h2>
+  
     <table>
       <tr>
         <th>Id</th>
@@ -18,15 +18,13 @@
       </tr>
       @foreach($proyectos as $proyecto)
         <tr>
-          <td>{{$proyecto->id}}</td>
+          <td><a href="{{route('proyecto.show', $proyecto->id)}}">{{$proyecto->id}}</a></td>
           <td>{{$proyecto->nombre}}</td>
           <td>{{$proyecto->titulo}}</td>
           <td>{{$proyecto->fechainicio}}</td>
           <td>{{$proyecto->fechafin}}</td>
           <td>{{$proyecto->horasestimadas}}</td>
-          
-            <td><a href="{{route('empleado.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>
-          
+          <td><a href="{{route('empleado.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>
         </tr>
       @endforeach
     </table>

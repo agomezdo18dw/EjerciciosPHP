@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <h2>Departamentos</h2>
+  <h2><b>Departamentos</b></h2>
 
   <table>
     <tr>

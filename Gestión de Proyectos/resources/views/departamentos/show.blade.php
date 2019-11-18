@@ -4,19 +4,19 @@
 
 @section('content')
 
-<h2>Departamentos</h2>
-
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-    </tr>
-    @foreach($departamentos as $departamento)
-    <tr>
-        <td>{{$departamento->id}}</td>
-        <td>{{$departamento->nombre}}</td>
-    </tr>
-    @endforeach
-</table>
+@foreach($departamentos as $departamento)
+    <h2><b>Departamento: </b>{{$departamento->nombre}}</h2>
+    
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+        </tr>
+        <tr>
+            <td>{{$departamento->id}}</td>
+            <td>{{$departamento->nombre}}</td>
+        </tr>
+    </table>
+@endforeach
 
 @endsection
