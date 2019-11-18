@@ -22,7 +22,9 @@ Route::get('proyectos', 'ProyectoController@verProyectos')->name('proyectos.inde
 Route::get('proyecto/{id}', 'ProyectoController@verProyecto')->name('proyecto.show');
 Route::get('formularioProyecto', 'ProyectoController@formularioInsertar')->name('formInsertarPro');
 Route::get('insertarProyecto', 'ProyectoController@insertar')->name('insertarPro');
-
+Route::get('formularioEditar/{id}', 'ProyectoController@formularioEditar')->name('formEditar');
+Route::get('editProyecto/{id}', 'ProyectoController@editar')->name('proyecto.edit');
+//Route::get('deleteProyecto/{id}', 'ProyectoController@eliminar')->name('proyecto.delete');
 
 Route::get('departamentos', 'DepartamentoController@verDepartamentos')->name('departamentos.index');
 Route::get('departamento/{id}', 'DepartamentoController@verDepartamento')->name('departamento.show');
