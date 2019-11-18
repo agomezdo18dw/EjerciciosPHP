@@ -24,7 +24,7 @@ Route::get('formularioProyecto', 'ProyectoController@formularioInsertar')->name(
 Route::get('insertarProyecto', 'ProyectoController@insertar')->name('insertarPro');
 Route::get('formularioEditar/{id}', 'ProyectoController@formularioEditar')->name('formEditar');
 Route::get('editProyecto/{id}', 'ProyectoController@editar')->name('proyecto.edit');
-//Route::get('deleteProyecto/{id}', 'ProyectoController@eliminar')->name('proyecto.delete');
+Route::get('deleteProyecto/{id}', 'ProyectoController@eliminar')->name('proyecto.delete');
 
 Route::get('departamentos', 'DepartamentoController@verDepartamentos')->name('departamentos.index');
 Route::get('departamento/{id}', 'DepartamentoController@verDepartamento')->name('departamento.show');

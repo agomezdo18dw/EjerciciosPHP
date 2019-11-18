@@ -26,7 +26,7 @@
           <td>{{$proyecto->horasestimadas}}</td>
           <td><a href="{{route('empleado.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>
           <td><a href="{{route('formEditar', $proyecto->id)}}">Editar</a></td>
-          <td><a href="">Eliminar</a></td>
+          <td><a href="{{route('proyecto.delete', $proyecto->id)}}">Eliminar</a></td>
         </tr>
       @endforeach
     </table>

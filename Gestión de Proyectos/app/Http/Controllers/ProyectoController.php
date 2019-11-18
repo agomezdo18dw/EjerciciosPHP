@@ -71,9 +71,9 @@ class ProyectoController extends Controller
         return view('proyectos/index')->with(['proyectos' => $proyectos]);
     }
 
-    /*public function eliminar($id){
+    public function eliminar($id){
         Proyecto::where('id', '=', $id)->delete();
         $proyectos = Proyecto::all();
         return view('proyectos/index')->with(['proyectos' => $proyectos]);
-    }*/
+    }
 }
