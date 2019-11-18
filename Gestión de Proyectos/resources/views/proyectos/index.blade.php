@@ -5,7 +5,7 @@
 @section('content')
 
   <h2><b>Proyectos</b></h2>
-  
+  <a href="{{route('formInsertarPro')}}">Insertar</a>
     <table>
       <tr>
         <th>Id</th>
