@@ -18,8 +18,8 @@ Route::get('/', function () {
 Route::get('empleados', 'EmpleadoController@verEmpleados')->name('empleados.index');
 Route::get('empleado/{id}', 'EmpleadoController@verEmpleado')->name('empleado.show');
 
-Route::get('proyectos', 'EmpleadoController@verProyectos')->name('proyectos.index');
-Route::get('proyecto/{id}', 'EmpleadoController@verProyecto')->name('proyecto.show');
+Route::get('proyectos', 'ProyectoController@verProyectos')->name('proyectos.index');
+Route::get('proyecto/{id}', 'ProyectoController@verProyecto')->name('proyecto.show');
 
-Route::get('departamentos', 'EmpleadoController@verDepartamentos')->name('departamentos.index');
-Route::get('departamento/{id}', 'EmpleadoController@verDepartamento')->name('departamento.show');
+Route::get('departamentos', 'DepartamentoController@verDepartamentos')->name('departamentos.index');
+Route::get('departamento/{id}', 'DepartamentoController@verDepartamento')->name('departamento.show');
