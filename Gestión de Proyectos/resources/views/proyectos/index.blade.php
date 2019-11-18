@@ -24,9 +24,9 @@
           <td>{{$proyecto->fechainicio}}</td>
           <td>{{$proyecto->fechafin}}</td>
           <td>{{$proyecto->horasestimadas}}</td>
-          @if(!is_null($proyecto->empleado))
-            <td>{{$proyecto->empleado->nombre}}</td>
-          @endif
+          
+            <td><a href="{{route('empleado.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>
+          
         </tr>
       @endforeach
     </table>
