@@ -13,7 +13,7 @@ class EmpleadoController extends Controller
     }
 
     public function verEmpleado($id){
-        $empleados = Empleado::where('id', '=', $id)->get();
+        $empleados = Empleado::where('empleado_id', '=', $id)->get();
         return view('empleado/show')->with(['empleados' => $empleados]);
     }
 }

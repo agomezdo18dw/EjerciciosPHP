@@ -18,13 +18,13 @@
             <th>Empleado responsable</th>
         </tr>
         <tr>
-            <td>{{$proyecto->id}}</td>
+            <td>{{$proyecto->proyecto_id}}</td>
             <td>{{$proyecto->nombre}}</td>
             <td>{{$proyecto->titulo}}</td>
             <td>{{$proyecto->fechainicio}}</td>
             <td>{{$proyecto->fechafin}}</td>
             <td>{{$proyecto->horasestimadas}}</td>
-            <td><a href="{{route('empleado.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>
+            <td><a href="{{route('empleado.show', $proyecto->empleado->empleado_id)}}">{{$proyecto->empleado->nombre}}</a></td>
         </tr>
     </table>
 @endforeach

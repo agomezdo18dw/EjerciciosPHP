@@ -14,7 +14,7 @@ class ProyectoController extends Controller
     }
     
     public function verProyecto($id){
-        $proyectos = Proyecto::where('id', '=', $id)->get();
+        $proyectos = Proyecto::where('proyecto_id', '=', $id)->get();
         return view('proyectos/show')->with(['proyectos' => $proyectos]);
     }
 
@@ -45,7 +45,7 @@ class ProyectoController extends Controller
     }
 
     public function formularioEditar($id){
-        $proyectos = Proyecto::where('id', '=', $id)->get();
+        $proyectos = Proyecto::where('proyecto_id', '=', $id)->get();
         $empleados = Empleado::all();
         return view('proyectos/formEditar')->with(['proyectos' => $proyectos, 'empleados' => $empleados]);
     }
@@ -56,15 +56,15 @@ class ProyectoController extends Controller
         $fechaIni = $request -> input('fechaIni');
         $fechaFin = $request -> input('fechaFin');
         $horas = $request -> input('horas');
-        //$responsable = $request -> get('responsable');
+        $responsable = $request -> get('responsable');
 
-        Proyecto::where('id', '=', $id)->update([
+        Proyecto::where('proyecto_id', '=', $id)->update([
             'nombre' => $nombre,
             'titulo' => $titulo,
             'fechainicio' => $fechaIni,
             'fechafin' => $fechaFin,
-            'horasestimadas' => $horas//,
-            //'empleadoRes' =>  $responsable
+            'horasestimadas' => $horas,
+            'empleadoRes' =>  $responsable
         ]);
 
         $proyectos = Proyecto::all();
