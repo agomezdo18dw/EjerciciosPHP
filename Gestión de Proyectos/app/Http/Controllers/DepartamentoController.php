@@ -13,7 +13,7 @@ class DepartamentoController extends Controller
     }
 
     public function verDepartamento($id){
-        $departamentos = Departamento::where('departamento_id', '=', $id)->get();
+        $departamentos = Departamento::where('id', '=', $id)->get();
         return view('departamentos/show')->with(['departamentos' => $departamentos]);
     }
 }

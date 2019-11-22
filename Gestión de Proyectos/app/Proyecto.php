@@ -9,6 +9,6 @@ class Proyecto extends Model
     protected $table = 'proyectos';
     public function empleado()
     {
-        return $this->belongsTo('App\Empleado', 'empleado_id');
+        return $this->belongsTo('App\Empleado', 'empleadoRes');
     }
 }

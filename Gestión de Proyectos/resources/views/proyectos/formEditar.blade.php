@@ -16,7 +16,7 @@
             ->
             <select name="responsable">
                 @foreach($empleados as $empleado)
-                    <option value="{{$empleado->empleado_id}}">{{$empleado->nombre}} {{$empleado->apellido}}</option>
+                    <option value="{{$empleado->id}}">{{$empleado->nombre}} {{$empleado->apellido}}</option>
                 @endforeach
             </select>
             </p>

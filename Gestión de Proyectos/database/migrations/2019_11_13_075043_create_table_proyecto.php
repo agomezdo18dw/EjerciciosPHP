@@ -14,7 +14,7 @@ class CreateTableProyecto extends Migration
     public function up()
     {
         Schema::create('proyectos', function (Blueprint $table) {
-            $table->bigIncrements('proyecto_id');
+            $table->bigIncrements('id');
             $table->string('nombre',50)->unique();
             $table->string('titulo');
             $table->date('fechainicio');
@@ -23,7 +23,7 @@ class CreateTableProyecto extends Migration
             $table->unsignedBigInteger('empleadoRes');
             $table->timestamps();
 
-            $table->foreign('empleadoRes')->references('empleado_id')->on('empleados');
+            $table->foreign('empleadoRes')->references('id')->on('empleados');
         });
     }
 
