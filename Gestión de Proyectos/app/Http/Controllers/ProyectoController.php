@@ -61,7 +61,15 @@ class ProyectoController extends Controller
     }
 
     public function editar($id, Request $request){
-        $nombre = $request -> input('nombre');
+
+        $request->validate([
+            'titulo' => 'required',
+            'fechaIni' => 'required|date',
+            'fechaFin' => 'required|date|after:fechaIni',
+            'horas' => 'required|numeric',
+            'responsable' => 'required|string'
+        ]);
+
         $titulo = $request -> input('titulo');
         $fechaIni = $request -> input('fechaIni');
         $fechaFin = $request -> input('fechaFin');
@@ -69,7 +77,6 @@ class ProyectoController extends Controller
         $responsable = $request -> get('responsable');
 
         Proyecto::where('id', '=', $id)->update([
-            'nombre' => $nombre,
             'titulo' => $titulo,
             'fechainicio' => $fechaIni,
             'fechafin' => $fechaFin,
