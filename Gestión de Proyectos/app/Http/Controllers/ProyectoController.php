@@ -24,6 +24,16 @@ class ProyectoController extends Controller
     }
     
     public function insertar(Request $request){
+
+        $request->validate([
+            'nombre' => 'required',
+            'titulo' => 'required',
+            'fechaIni' => 'required|date',
+            'fechaFin' => 'required|date|after:fechaIni',
+            'horas' => 'required|numeric',
+            'responsable' => 'required|string'
+        ]);
+
         $nombre = $request -> input('nombre');
         $titulo = $request -> input('titulo');
         $fechaIni = $request -> input('fechaIni');
