@@ -6,7 +6,7 @@
 
     <h2><b>Insertar proyecto</b></h2>
     @foreach($proyectos as $proyecto)
-        <form action="{{route('proyecto.edit', $proyecto->id)}}" method="get">
+        <form action="{{route('proyectos.edit', $proyecto->id)}}" method="get">
             <p>Nombre: <input type="text" name="nombre" placeholder="Esturi" value="{{$proyecto->nombre}}" disabled></p>
             <p>Titulo: <input type="text" name="titulo" placeholder="Est" value="{{$proyecto->titulo}}">
             @if ($errors->has('titulo'))

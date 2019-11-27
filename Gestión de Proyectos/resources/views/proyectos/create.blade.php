@@ -6,7 +6,7 @@
 
     <h2><b>Insertar proyecto</b></h2>
 
-    <form action="{{route('insertarPro')}}" method="get">
+    <form action="{{route('proyectos.store')}}" method="get">
         <p>Nombre: <input type="text" name="nombre" placeholder="Esturi" value="{{old('nombre')}}">
         @if ($errors->has('nombre'))
             <label class="error">
