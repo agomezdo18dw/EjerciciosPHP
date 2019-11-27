@@ -5,8 +5,7 @@
 @section('content')
 
     <h2><b>Insertar proyecto</b></h2>
-    @foreach($proyectos as $proyecto)
-        <form action="{{route('proyectos.edit', $proyecto->id)}}" method="get">
+        <form action="{{route('proyecto.update', $proyecto->id)}}" method="PUT">
             <p>Nombre: <input type="text" name="nombre" placeholder="Esturi" value="{{$proyecto->nombre}}" disabled></p>
             <p>Titulo: <input type="text" name="titulo" placeholder="Est" value="{{$proyecto->titulo}}">
             @if ($errors->has('titulo'))
@@ -53,5 +52,4 @@
                 <input type="reset" value="Borrar">
             </p>
         </form>
-    @endforeach
 @endsection
