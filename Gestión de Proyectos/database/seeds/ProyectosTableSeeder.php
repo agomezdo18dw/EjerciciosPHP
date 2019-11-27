@@ -12,6 +12,8 @@ class ProyectosTableSeeder extends Seeder
      */
     public function run()
     {
+        factory(Proyecto::class,4)->create(); //Se le tiene que añadir: use App\Empleado
+
         /*----Seeders viejos----*/
 
         // DB::table('proyectos')->insert([
@@ -48,7 +50,5 @@ class ProyectosTableSeeder extends Seeder
         // ]);
 
         /*--Fin Seeders viejos--*/
-
-        factory(Proyecto::class,4)->create(); //Se le tiene que añadir: use App\Empleado
     }
 }

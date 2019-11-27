@@ -12,6 +12,8 @@ class EmpleadosTableSeeder extends Seeder
      */
     public function run()
     {   
+        factory(Empleado::class,5)->create(); //Se le tiene que añadir: use App\Empleado
+
         /*----Seeders viejos----*/
 
         // DB::table('empleados')->insert([
@@ -58,7 +60,5 @@ class EmpleadosTableSeeder extends Seeder
         // ]);
 
         /*--Fin Seeders viejos--*/
-
-        factory(Empleado::class,5)->create(); //Se le tiene que añadir: use App\Empleado
     }
 }
