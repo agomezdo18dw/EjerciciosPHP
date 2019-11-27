@@ -2,29 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Proyecto;
 use App\Empleado;
+use Illuminate\Http\Request;
 
-class ProyectoController extends Controller
+class proyectoController extends Controller
 {
-    public function verProyectos(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         $proyectos = Proyecto::all();
-        return view('proyectos/index')->with(['proyectos' => $proyectos]);
-    }
-    
-    public function verProyecto($id){
-        $proyectos = Proyecto::where('id', '=', $id)->get();
-        return view('proyectos/show')->with(['proyectos' => $proyectos]);
+        return view('proyectos.index')->with(['proyectos' => $proyectos]);
     }
 
-    public function formularioInsertar(){
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         $empleados = Empleado::all();
-        return view('proyectos/formulario')->with(['empleados' => $empleados]);
+        return view('proyectos.create')->with(['empleados' => $empleados]);
     }
-    
-    public function insertar(Request $request){
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $request->validate([
             'nombre' => 'required',
             'titulo' => 'required',
@@ -34,34 +47,52 @@ class ProyectoController extends Controller
             'responsable' => 'required|string'
         ]);
 
-        $nombre = $request -> input('nombre');
-        $titulo = $request -> input('titulo');
-        $fechaIni = $request -> input('fechaIni');
-        $fechaFin = $request -> input('fechaFin');
-        $horas = $request -> input('horas');
-        $responsable = $request -> get('responsable');
+        $project = new Proyecto;
+        $project->nombre = $request -> input('nombre');
+        $project->titulo = $request -> input('titulo');
+        $project->fechainicio = $request -> input('fechaIni');
+        $project->fechafin = $request -> input('fechaFin');
+        $project->horasestimadas = $request -> input('horas');
+        $project->empleadoRes = $request -> get('responsable');
+        $project->save();
 
-        Proyecto::insert([
-            'nombre' => $nombre,
-            'titulo' => $titulo,
-            'fechainicio' => $fechaIni,
-            'fechafin' => $fechaFin,
-            'horasestimadas' => $horas,
-            'empleadoRes' => $responsable
-        ]);
-
-        $proyectos = Proyecto::all();
-        return view('proyectos/index')->with(['proyectos' => $proyectos]);
+        return redirect(route('proyectos.index'));
     }
 
-    public function formularioEditar($id){
-        $proyectos = Proyecto::where('id', '=', $id)->get();
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $proyecto = Proyecto::find($id);
+        return view('proyectos.show')->with(['proyecto' => $proyecto]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $proyecto = Proyecto::find($id);
         $empleados = Empleado::all();
-        return view('proyectos/formEditar')->with(['proyectos' => $proyectos, 'empleados' => $empleados]);
+        return view('proyectos.update')->with(['proyecto' => $proyecto, 'empleados' => $empleados]);
     }
 
-    public function editar($id, Request $request){
-
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
         $request->validate([
             'titulo' => 'required',
             'fechaIni' => 'required|date',
@@ -69,28 +100,29 @@ class ProyectoController extends Controller
             'horas' => 'required|numeric',
             'responsable' => 'required|string'
         ]);
+        
+        $project = find($id);
+        $project->nombre = $request -> input('nombre');
+        $project->titulo = $request -> input('titulo');
+        $project->fechainicio = $request -> input('fechaIni');
+        $project->fechafin = $request -> input('fechaFin');
+        $project->horasestimadas = $request -> input('horas');
+        $project->empleadoRes = $request -> get('responsable');
+        $project->save();
 
-        $titulo = $request -> input('titulo');
-        $fechaIni = $request -> input('fechaIni');
-        $fechaFin = $request -> input('fechaFin');
-        $horas = $request -> input('horas');
-        $responsable = $request -> get('responsable');
-
-        Proyecto::where('id', '=', $id)->update([
-            'titulo' => $titulo,
-            'fechainicio' => $fechaIni,
-            'fechafin' => $fechaFin,
-            'horasestimadas' => $horas,
-            'empleadoRes' =>  $responsable
-        ]);
-
-        $proyectos = Proyecto::all();
-        return view('proyectos/index')->with(['proyectos' => $proyectos]);
+        return redirect(route('proyectos.index'));
     }
 
-    public function eliminar($id){
-        Proyecto::where('id', '=', $id)->delete();
-        $proyectos = Proyecto::all();
-        return view('proyectos/index')->with(['proyectos' => $proyectos]);
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $project = find($id);
+        $project->delete();
+        return redirect(route('proyectos.index'));
     }
 }
