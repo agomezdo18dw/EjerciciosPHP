@@ -101,7 +101,7 @@ class proyectoController extends Controller
             'responsable' => 'required|string'
         ]);
         
-        $project = find($id);
+        $project = Proyecto::find($id);
         $project->nombre = $request -> input('nombre');
         $project->titulo = $request -> input('titulo');
         $project->fechainicio = $request -> input('fechaIni');
@@ -121,7 +121,7 @@ class proyectoController extends Controller
      */
     public function destroy($id)
     {
-        $project = find($id);
+        $project = Proyecto::find($id);
         $project->delete();
         return redirect(route('proyectos.index'));
     }
