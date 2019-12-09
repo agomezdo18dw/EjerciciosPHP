@@ -18,13 +18,14 @@ Route::get('/', function () {
 Route::get('empleados', 'EmpleadoController@verEmpleados')->name('empleados.index');
 Route::get('empleado/{id}', 'EmpleadoController@verEmpleado')->name('empleado.show');
 
-Route::get('proyectos', 'ProyectoController@verProyectos')->name('proyectos.index');
-Route::get('proyecto/{id}', 'ProyectoController@verProyecto')->name('proyecto.show');
-Route::get('formularioProyecto', 'ProyectoController@formularioInsertar')->name('formInsertarPro');
-Route::get('insertarProyecto', 'ProyectoController@insertar')->name('insertarPro');
-Route::get('formularioEditar/{id}', 'ProyectoController@formularioEditar')->name('formEditar');
-Route::get('editProyecto/{id}', 'ProyectoController@editar')->name('proyecto.edit');
-Route::get('deleteProyecto/{id}', 'ProyectoController@eliminar')->name('proyecto.delete');
+// Route::get('proyectos', 'ProyectoController@index')->name('proyectos.index');
+// Route::get('proyectos/create', 'ProyectoController@create')->name('proyectos.create');
+// Route::post('proyectos', 'ProyectoController@store')->name('proyectos.store');
+// Route::get('proyecto/{id}', 'ProyectoController@show')->name('proyectos.show');
+// Route::get('proyecto/{id}/edit', 'ProyectoController@edit')->name('proyectos.edit');
+// Route::put('proyectos/{id}', 'ProyectoController@update')->name('proyectos.update');
+// Route::delete('proyectos/{id}', 'ProyectoController@destroy')->name('proyectos.destroy');
+Route::resource('proyectos', 'ProyectoController');
 
 Route::get('departamentos', 'DepartamentoController@verDepartamentos')->name('departamentos.index');
 Route::get('departamento/{id}', 'DepartamentoController@verDepartamento')->name('departamento.show');
