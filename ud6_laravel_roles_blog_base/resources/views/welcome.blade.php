@@ -11,7 +11,7 @@
         <!-- Author -->
         <p class="lead">
           by
-          <a href="#">{{$post->user_id}}</a>
+          <a href="{{$post->user->id}}">{{$post->user->name}}</a>
         </p>
         <hr>
         <!-- Date/Time -->
