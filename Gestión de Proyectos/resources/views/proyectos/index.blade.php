@@ -25,14 +25,19 @@
     <td>{{$proyecto->fechafin}}</td>
     <td>{{$proyecto->horasestimadas}}</td>
     <td><a href="{{route('empleado.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></td>
-    <td><a href="{{route('proyectos.edit', $proyecto->id)}}">Editar</a></td>
+    <td>
+      <form action="{{route('proyectos.edit', $proyecto->id)}}" method="get">
+        @csrf
+        <input type="submit" value="Editar">
+      </form>
+    </td>
     <td>
       <form action="{{route('proyectos.destroy', $proyecto->id)}}" method="post">
         @method('DELETE')
         @csrf
         <input type="submit" value="Eliminar">
       </form>
-      
+    </td>
   </tr>
   @endforeach
 </table>

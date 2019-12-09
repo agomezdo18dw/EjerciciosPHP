@@ -53,7 +53,7 @@ class proyectoController extends Controller
         $project->fechainicio = $request -> input('fechaIni');
         $project->fechafin = $request -> input('fechaFin');
         $project->horasestimadas = $request -> input('horas');
-        $project->empleadoRes = $request -> get('responsable');
+        $project->empleado_id = $request -> get('responsable');
         $project->save();
 
         return redirect(route('proyectos.index'));
@@ -107,7 +107,7 @@ class proyectoController extends Controller
         $project->fechainicio = $request -> input('fechaIni');
         $project->fechafin = $request -> input('fechaFin');
         $project->horasestimadas = $request -> input('horas');
-        $project->empleadoRes = $request -> get('responsable');
+        $project->empleado_id = $request -> get('responsable');
         $project->save();
 
         return redirect(route('proyectos.index'));

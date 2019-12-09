@@ -22,6 +22,8 @@
         <td>{{$empleado->telefono}}</td>
         @if(!is_null($empleado->proyecto))
           <td><a href="{{route('proyectos.show', $empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a></td>
+        @else
+          <td><span>Ninguno</span></td>
         @endif
       </tr>
       @endforeach

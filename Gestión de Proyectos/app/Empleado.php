@@ -11,6 +11,6 @@ class Empleado extends Model
     
     public function proyecto()
     {
-        return $this->hasOne('App\Proyecto', 'empleadoRes');
+        return $this->hasOne(Proyecto::class);
     }
 }

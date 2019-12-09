@@ -22,7 +22,7 @@ class ProyectosTableSeeder extends Seeder
         //     'fechainicio' => '2019-12-10',
         //     'fechafin' => '2019-12-20',
         //     'horasestimadas' => '50',
-        //     'empleadoRes' => '1'
+        //     'empleado_id' => '1'
         // ]);
         // DB::table('proyectos')->insert([
         //     'nombre' => 'SpaceX',
@@ -30,7 +30,7 @@ class ProyectosTableSeeder extends Seeder
         //     'fechainicio' => '2019-7-3',
         //     'fechafin' => '2019-10-15',
         //     'horasestimadas' => '300',
-        //     'empleadoRes' => '2'
+        //     'empleado_id' => '2'
         // ]);
         // DB::table('proyectos')->insert([
         //     'nombre' => 'Android50',
@@ -38,7 +38,7 @@ class ProyectosTableSeeder extends Seeder
         //     'fechainicio' => '2019-9-1',
         //     'fechafin' => '2030-4-1',
         //     'horasestimadas' => '3000',
-        //     'empleadoRes' => '3'
+        //     'empleado_id' => '3'
         // ]);
         // DB::table('proyectos')->insert([
         //     'nombre' => 'IOS40',
@@ -46,7 +46,7 @@ class ProyectosTableSeeder extends Seeder
         //     'fechainicio' => '2020-1-2',
         //     'fechafin' => '2030-7-1',
         //     'horasestimadas' => '3000',
-        //     'empleadoRes' => '4'
+        //     'empleado_id' => '4'
         // ]);
 
         /*--Fin Seeders viejos--*/
