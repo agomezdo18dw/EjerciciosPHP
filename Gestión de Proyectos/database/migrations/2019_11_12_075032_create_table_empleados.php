@@ -19,7 +19,10 @@ class CreateTableEmpleados extends Migration
             $table->string('apellido');
             $table->string('email');
             $table->string('telefono');
+            $table->unsignedBigInteger('departamento_id');
             $table->timestamps();
+
+            $table->foreign('departamento_id')->references('id')->on('departamentos');
         });
     }
 
