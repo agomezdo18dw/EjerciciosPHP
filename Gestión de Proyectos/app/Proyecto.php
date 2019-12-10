@@ -13,4 +13,9 @@ class Proyecto extends Model
     {
         return $this->belongsTo(Empleado::class);
     }
+
+    public function empleados()
+    {
+        return $this->belongsToMany(Empleado::class);
+    }
 }
