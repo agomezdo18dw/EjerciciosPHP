@@ -15,6 +15,7 @@
         <th>Responsable de</th>
         <th>Departamento</th>
         <th>Colabora en</th>
+        <th>Jefe de</th>
       </tr>
       @foreach($empleados as $empleado)
       <tr>
@@ -33,6 +34,13 @@
             @foreach($empleado->proyectos as $proyecto)
               <a href="{{route('proyectos.show', $proyecto->id)}}">{{$proyecto->nombre}}</a>,
             @endforeach
+          </td>
+        @else
+          <td><span>Ninguno</span></td>
+        @endif
+        @if(!is_null($empleado->jefede))
+          <td>
+              <a href="{{route('departamento.show', $empleado->jefede->id)}}">{{$empleado->jefede->nombre}}</a>
           </td>
         @else
           <td><span>Ninguno</span></td>
