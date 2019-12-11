@@ -16,6 +16,9 @@
     <!-- Custom styles for this template -->
     <link href="{{ URL::asset('/css/blog-post.css') }}" rel="stylesheet">
 
+    <!-- Fontsawesome -->
+    <link href="{{ URL::asset('/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -49,7 +52,8 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item bg-dark text-light" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">@lang('Cerrar sesion')</a>
+                                <a class="dropdown-item bg-dark text-light" href="{{ route('posts.index') }}">Posts</a>
+                                <a class="dropdown-item bg-dark text-light" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Cerrar sesion</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>

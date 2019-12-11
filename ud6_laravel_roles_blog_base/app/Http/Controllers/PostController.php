@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Post;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $posts = Post::where('user_id', $user->id)->get();
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -45,7 +53,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $posts = Post::where('id', $id)->get();
+        return view('posts.show', compact('posts'));
     }
 
     /**
