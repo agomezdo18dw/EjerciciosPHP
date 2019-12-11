@@ -44,13 +44,16 @@
                             <a class="nav-link" href="{{ route('register') }}">Registro</a>
                         </li>
                     @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">Cerrar
-                                sesion</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item bg-dark text-light" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">@lang('Cerrar sesion')</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
                         </li>
                     @endguest
                 </ul>
