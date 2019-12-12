@@ -53,8 +53,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $posts = Post::where('id', $id)->get();
-        return view('posts.show', compact('posts'));
+        $post = Post::find($id);
+        $this->authorize('view', $post);
+
+        return view('posts.show', compact('post'));
     }
 
     /**
