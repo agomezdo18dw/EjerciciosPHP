@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Post;
+use App\Category;
+Use \Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -31,7 +33,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $post = new Post;
+        $btn = "Crear";
+        return view('posts.create')->with(['categories' => $categories, 'post' => $post, 'btnText' => $btn]);
     }
 
     /**
@@ -41,8 +46,20 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {        
+        $time = Carbon::now()->setTimezone('Europe/Madrid');
+
+        $Post = new Post;
+        $Post->title = $request -> input('title');
+        $Post->excerpt = $request -> input('excerpt');
+        $Post->body = $request -> input('body');
+        $Post->image = $request -> input('img');
+        $Post->published_at = $time->toDateTimeString();
+        $Post->category_id = $request -> get('category');
+        $Post->user_id = Auth::user()->id;
+        $Post->save();
+
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -90,6 +107,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect(route('posts.index'));
     }
 }
