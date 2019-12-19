@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class EditorController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:admin');
+        $this->middleware('role:editor');
     }
 
     public function index()
     {
-        return "Soy Administrador";
+        return "Soy Editor";
     }
 }
