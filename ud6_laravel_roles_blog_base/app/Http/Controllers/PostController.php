@@ -84,7 +84,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $post = Post::find($id);
+        $btn = "Editar";
+        return view('posts.update')->with(['categories' => $categories, 'post' => $post, 'btnText' => $btn]);
     }
 
     /**
@@ -96,7 +99,19 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $time = Carbon::now()->setTimezone('Europe/Madrid');
+
+        $Post = Post::find($id);
+        $Post->title = $request -> input('title');
+        $Post->excerpt = $request -> input('excerpt');
+        $Post->body = $request -> input('body');
+        $Post->image = $request -> input('img');
+        $Post->published_at = $time->toDateTimeString();
+        $Post->category_id = $request -> get('category');
+        $Post->user_id = Auth::user()->id;
+        $Post->save();
+
+        return redirect(route('posts.index'));
     }
 
     /**
