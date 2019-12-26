@@ -52,6 +52,9 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                                @if(auth()->user()->isAdmin())
+                                <a class="dropdown-item bg-dark text-light" href="{{ route('admin') }}">Admin Template</a>
+                                @endif
                                 <a class="dropdown-item bg-dark text-light" href="{{ route('posts.index') }}">Posts</a>
                                 <a class="dropdown-item bg-dark text-light" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Cerrar sesion</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
